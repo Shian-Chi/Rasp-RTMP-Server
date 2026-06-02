@@ -40,7 +40,7 @@ show_status() {
 
     # 顯示 FFmpeg 進程
     local ffmpeg_count
-    ffmpeg_count=$(pgrep -c ffmpeg 2>/dev/null || echo 0)
+    ffmpeg_count=$(pgrep ffmpeg 2>/dev/null | wc -l)
     printf "  %-20s " "FFmpeg 進程"
     if [ "$ffmpeg_count" -gt 0 ]; then
         echo -e "${GREEN}● $ffmpeg_count 個進程${NC}"
