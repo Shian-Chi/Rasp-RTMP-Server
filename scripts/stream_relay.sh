@@ -243,7 +243,6 @@ build_ffmpeg_cmd() {
             # use_wallclock_as_timestamps 修正 Non-monotonous DTS 問題
             cmd+=" -use_wallclock_as_timestamps 1"
             cmd+=" -rtsp_transport $RTSP_TRANSPORT"
-            cmd+=" -stimeout $((CONNECTION_TIMEOUT * 1000000))"
             cmd+=" -i \"$input_source\""
             log_debug "使用 RTSP 輸入，傳輸協定：$RTSP_TRANSPORT"
             ;;
